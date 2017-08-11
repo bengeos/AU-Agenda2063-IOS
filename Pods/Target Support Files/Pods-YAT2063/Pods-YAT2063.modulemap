@@ -1,0 +1,6 @@
+framework module Pods_YAT2063 {
+  umbrella header "Pods-YAT2063-umbrella.h"
+
+  export *
+  module * { export * }
+}
