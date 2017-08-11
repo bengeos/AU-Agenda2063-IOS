@@ -60,7 +60,7 @@ class NewsTableViewController: UITableViewController {
     
     func fetchNews(){
         
-        dataBaseRef.child("News").observe(.value, with: { (snapshot) in
+        dataBaseRef.child("News").queryOrdered(byChild: "newstitle").queryEqual(toValue: "agenda").observe(.value, with: { (snapshot) in
             var results = [News]()
             
             for user in snapshot.children {
@@ -97,6 +97,9 @@ class NewsTableViewController: UITableViewController {
         if isInternetAvailable(){
         cell.newsDetail.text = newsArray[indexPath.row].summary
         cell.newsTitle.text = newsArray[indexPath.row].title
+            cell.time.text = newsArray[indexPath.row].time
+            cell.country.text = newsArray[indexPath.row].country
+            cell.author.text = newsArray[indexPath.row].author
         
         let imageURL = newsArray[indexPath.row].photoURL!
         
@@ -135,14 +138,17 @@ class NewsTableViewController: UITableViewController {
                 
                 let Title = newsArray[indexpath.row].title as String
                 VC.SentData1 = Title
-                print(newsArray)
-                
-                
-                
+                let Country = newsArray[indexpath.row].country as String
+                VC.SentData2 = Country
                 let Imageview = newsArray[indexpath.row].photoURL as String
                 VC.SentData3 = Imageview
                 let detailDesc = newsArray[indexpath.row].detailnews! as String
                 VC.SentData4 = detailDesc
+                let Author = newsArray[indexpath.row].author as String
+                VC.SentData5 = Author
+                let Time = newsArray[indexpath.row].time as String
+                VC.SentData6 = Time
+                
                 //                let Imageview2 = imageGoalBot[indexpath.row] as String
                 //                VC.SentData5 = Imageview2
                 

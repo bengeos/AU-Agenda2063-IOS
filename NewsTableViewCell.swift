@@ -41,6 +41,9 @@ class NewsTableViewCell: UITableViewCell {
         
         self.newsDetail.text = news.summary
         self.newsTitle.text = news.title
+        self.author.text = news.author
+        self.time.text = news.time
+        self.country.text = news.country
         
         let imageURL = news.photoURL!
         

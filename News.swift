@@ -17,6 +17,9 @@ struct News {
     var summary: String?
     var detailnews: String?
     var photoURL: String!
+    var author: String!
+    var time: String!
+    var country: String!
     var ref: DatabaseReference?
     var key: String?
     
@@ -27,6 +30,9 @@ struct News {
         title = (snapshot.value! as! NSDictionary)["newstitle"] as! String
         summary = (snapshot.value! as! NSDictionary)["newsdetail"] as? String
         detailnews = (snapshot.value! as! NSDictionary)["newsdetail"] as? String
+        author = (snapshot.value! as! NSDictionary)["publisher"] as? String
+        time = (snapshot.value! as! NSDictionary)["time"] as? String
+        country = (snapshot.value! as! NSDictionary)["location"] as? String
         photoURL = (snapshot.value! as! NSDictionary)["newsimg"] as! String
         
         

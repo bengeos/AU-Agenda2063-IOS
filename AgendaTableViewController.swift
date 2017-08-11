@@ -39,7 +39,7 @@ class AgendaTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        dataBaseRef.child("agenda").observe(.value, with: { (snapshot) in
+        dataBaseRef.child("agenda").queryOrdered(byChild: "published").queryEqual(toValue: true).observe(.value, with: { (snapshot) in
             var fetchedDevotionals = [Agenda]()
             
             for user in snapshot.children {

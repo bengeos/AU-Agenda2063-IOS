@@ -41,6 +41,7 @@ class DetailNewsViewController: UIViewController {
     var SentData3:String!
     var SentData4:String!
     var SentData5:String!
+    var SentData6:String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +56,12 @@ class DetailNewsViewController: UIViewController {
     func configureCellNews(){
         
         self.detailtitle.text = SentData1
+        self.country.text = SentData2
+
         self.detaildesc.text = SentData4
+        self.author.text = SentData5
+        self.time.text = SentData6
+
         
         let imageURL = SentData3
         
