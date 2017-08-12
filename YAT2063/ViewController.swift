@@ -14,8 +14,10 @@ class ViewController: UITabBarController {
         super.viewDidLoad()
         
         let appearance = UITabBarItem.appearance()
-        let attributes: [String: AnyObject] = [NSFontAttributeName:UIFont(name: "American Typewriter", size: 20)!, NSForegroundColorAttributeName: UIColor.white]
+        let attributes: [String: AnyObject] = [NSFontAttributeName:UIFont(name: "helvetica neue", size: 20)!, NSForegroundColorAttributeName: UIColor.black]
         appearance.setTitleTextAttributes(attributes, for: .normal)
+        let attributes2: [String: AnyObject] = [NSFontAttributeName:UIFont(name: "helvetica neue", size: 20)!, NSForegroundColorAttributeName: UIColor.white]
+        appearance.setTitleTextAttributes(attributes2, for: .selected)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

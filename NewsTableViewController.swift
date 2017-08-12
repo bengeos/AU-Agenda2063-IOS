@@ -59,8 +59,10 @@ class NewsTableViewController: UITableViewController {
     }
     
     func fetchNews(){
+        //        dataBaseRef.child("News").queryOrdered(byChild: "newstitle").queryEqual(toValue: "agenda").observe(.value, with: { (snapshot) in
+
         
-        dataBaseRef.child("News").queryOrdered(byChild: "newstitle").queryEqual(toValue: "agenda").observe(.value, with: { (snapshot) in
+        dataBaseRef.child("News").observe(.value, with: { (snapshot) in
             var results = [News]()
             
             for user in snapshot.children {
